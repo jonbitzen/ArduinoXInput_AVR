@@ -1,0 +1,17 @@
+{
+  "name": "framework-arduino-avr-xinput",
+  "version": "1.0.2",
+  "description": " AVR boards package for the ArduinoXInput project ",
+  "keywords": [
+    "framework",
+    "arduino",
+    "microchip",
+    "avr"
+  ],
+  "homepage": "https://www.arduino.cc/reference/en",
+  "license": "LGPL-2.1-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrailsback/ArduinoXInput_AVR"
+  }
+}
