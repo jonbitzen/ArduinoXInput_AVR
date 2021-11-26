@@ -1,3 +1,23 @@
+# XInput USB Core - PlatformIO integration
+
+This is a fork of the AVR core framework for use with the XInput library.  Before attempting to install this core, you should already have PlatformIO installed in Visual Studio Code.  Aft that:
+- open '~./platformio/platforms/atmelavr/platform.json', find the 'packages' section, and add the following entry to the list of packages:
+	```
+	"framework-arduino-avr-xinput": {
+		"type": "framework",
+		"optional": true,
+		"owner": "platformio",
+		"version": "https://github.com/jonbitzen/ArduinoXInput_AVR.git"
+	}
+	```
+- create a PlatformIO project using the XInput framework
+	- select the "Arduino Leonardo" board initially; you'll need to change this later
+	- you may need to restart Visual Studio Code if you already had it open before adding the XInput framework package
+- after creating the initial PlatformIO project, close Visual Studio Code again
+- copy all the files in 'platformio/boards' to '~/.platformio/platforms/atmelavr/boards'
+- restart Visual Studio Code
+  - note that you may need to change your project to select "Arduino Leonardo with Xinput" as your target board
+
 # XInput USB Core for Arduino AVR [![Build Status](https://github.com/dmadison/ArduinoXInput_AVR/workflows/build/badge.svg?branch=master)](https://github.com/dmadison/ArduinoXInput_AVR/actions?query=workflow%3Abuild)
 
 The files in this repository allow you to emulate an Xbox gamepad (XInput) using a USB-capable Arduino microcontroller. Originally forked from [the official Arduino AVR core](https://github.com/arduino/ArduinoCore-avr).
