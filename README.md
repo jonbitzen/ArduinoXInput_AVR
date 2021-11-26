@@ -1,7 +1,11 @@
 # XInput USB Core - PlatformIO integration
 
-This is a fork of the AVR core framework for use with the XInput library.  Before attempting to install this core, you should already have PlatformIO installed in Visual Studio Code.  Aft that:
-- open '~./platformio/platforms/atmelavr/platform.json', find the 'packages' section, and add the following entry to the list of packages:
+This is a fork of the AVR XInput core framework for use with the XInput library with configuration for use with PlatformIO in Visual Studio Code.  Before attempting to install this core, you should already have PlatformIO installed in Visual Studio Code.
+
+To install the XInput core:
+- first create a dummy project with the regular Arduino AVR framework to ensure that the base framework and configuration files are initialized
+  - after creating the initial PlatformIO project, close Visual Studio Code again
+- open '~/.platformio/platforms/atmelavr/platform.json', find the 'packages' section, and add the following entry to the list of packages:
 	```
 	"framework-arduino-avr-xinput": {
 		"type": "framework",
@@ -10,13 +14,9 @@ This is a fork of the AVR core framework for use with the XInput library.  Befor
 		"version": "https://github.com/jonbitzen/ArduinoXInput_AVR.git"
 	}
 	```
-- create a PlatformIO project using the XInput framework
-	- select the "Arduino Leonardo" board initially; you'll need to change this later
-	- you may need to restart Visual Studio Code if you already had it open before adding the XInput framework package
-- after creating the initial PlatformIO project, close Visual Studio Code again
 - copy all the files in 'platformio/boards' to '~/.platformio/platforms/atmelavr/boards'
-- restart Visual Studio Code
-  - note that you may need to change your project to select "Arduino Leonardo with Xinput" as your target board
+- restart Visual Studio Code; you should now be able to select "Arduino Leonardo with Xinput" from the available boards - the Arduino XInput core will be selected automatically
+  - remember that you still need to add the XInput library separately, in addition to selecting the XInout board and core.
 
 # XInput USB Core for Arduino AVR [![Build Status](https://github.com/dmadison/ArduinoXInput_AVR/workflows/build/badge.svg?branch=master)](https://github.com/dmadison/ArduinoXInput_AVR/actions?query=workflow%3Abuild)
 
